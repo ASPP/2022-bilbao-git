@@ -14,11 +14,11 @@
       - `git reset --hard <commit>` [reset HEAD and modify working directory] __rewrites history__ and __changes files__
 - how to *move* the whole working directory to a specific point in history?
     - `git checkout <commit>` ➔ `DETACHED HEAD` problem, __changes__ __files__
-    - interaction with branches
+    - interaction with branches: `git branch <branch_name>` + `git switch <branch_name>` 
 - `git gui`: building commits along the way interactively (for the *mess around* type of workflows)
 
 ## The Open Source model
-- remotes: `git pull from_where what`, `git push where what`, `git fetch from_where what`, `git merge another_branch`
+- remotes: `git pull <from_where> <what>`, `git push <where> <what>`, `git fetch <from_where> <what>`, `git merge <another_branch>`
 - GitHub: forks, branches and PRs: important ➔ explain fork vs. clone!!!
 - strategies for keeping your fork up-to-date: your `main` and upstream's `main`, short-lived and long-lived topic branches
 - a more thorough and detailed explanation can be found on the [Numpy Contributor's Guide](https://docs.scipy.org/doc/numpy/dev/gitwash/index.html). This guide can be adapted to your own needs, see [gitwash](https://github.com/matthew-brett/gitwash).
