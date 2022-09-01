@@ -28,8 +28,8 @@
 - make it clear that GitHub is just an option (git≠GitHub)
 
 ## Scenarios
-- lone scientist working alone in the cellar without Internet (local git)
-- lone scientist uploading their software to the Internet in the hope it can be useful for other people (local git + one personal GitHub repo)
-- lone scientist sharing one software project with some other befriended lone scientist working in a different place (local git + o.p.G.r + permissions)
-- research group sharing software among members (local git + several GitHub repos + permissions + branches + [optional] PRs)
-- fully distributed software development using the most typical open source software workflows as used by numpy, scipy, sklearn, etc. (like above + we don't trust our contributors, i.e. work strictly with forks)
+1. lone scientist working alone in the cellar without Internet (local git)
+2. lone scientist uploading their software to the Internet in the hope it can be useful for other people (local git + one personal GitHub repo)
+3. lone scientist sharing one software project with some other befriended lone scientist working in a different place (local git + o.p.G.r + permissions)
+4. research group sharing software among members (local git + several GitHub repos + permissions + branches + [optional] PRs)
+5. fully distributed software development using the most typical open source software workflows as used by numpy, scipy, sklearn, etc. (like above + we don't trust our contributors, i.e. work strictly with forks)
