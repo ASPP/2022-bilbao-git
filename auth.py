@@ -1,5 +1,5 @@
 import json
-import random 
+from random import randint
 
 def get_credentials():
     username = input('Enter your username: ')
@@ -20,7 +20,7 @@ def pwhash(password):
     pwh = 0
     for i, char in enumerate(password):
         pwh += (i + 1) * ord(char)
-    pws = random(3)+pwh
+    pws = randint(1,100)+pwh
     return pws
 
 def add_user(pwdb, username, password):
