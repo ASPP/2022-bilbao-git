@@ -17,8 +17,8 @@ def write_passwdb(pwdb):
 
 def pwhash(password):
     pwh = 0
-    for char in password:
-        pwh += ord(char)
+    for idx, char in enumerate(password):
+        pwh += (idx+1)*ord(char)
     return pwh
 
 def add_user(pwdb, username, password):
