@@ -1,4 +1,5 @@
 import json
+import random
 
 def get_credentials():
     username = input('Enter your username: ')
@@ -15,11 +16,15 @@ def write_passwdb(pwdb):
     with open('passwd.json', 'w') as pwdb_file:
         json.dump(pwdb, pwdb_file)
 
+
 def pwhash(password):
+    salt=random.randint(1000,10000)
     pwh = 0
     for i, char in enumerate(password):
         pwh += (i + 1) * ord(char)
-    return pwh
+
+
+    return (salt,pwh)
 
 def add_user(pwdb, username, password):
     if username not in pwdb:
