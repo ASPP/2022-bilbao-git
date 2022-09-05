@@ -1,9 +1,9 @@
 import json
+from random import randint
 
 def get_credentials():
     username = input('Enter your username: ')
-    password = pwhash(input(f'Enter your password {username}: '))
-
+    password = input(f'Enter your password {username}: ')
     return username, password
 
 def read_passwdb():
@@ -23,17 +23,20 @@ def pwhash(password):
 
 def add_user(pwdb, username, password):
     if username not in pwdb:
-        pwdb[username] = password
-
+        salt = randint(100000,999999)
+        x = str(salt)+password
+        hash = pwhash(x)
+        pwdb[username] = (salt,hash)       
 
 def authenticate(username, password, pwdb):
     if username in pwdb:
-        if password == pwdb[username]:
+        salt, hash = pwdb[username]
+        if pwhash(str(salt)+password) == hash:
             return True
         else:
             return False
     else:
-        add_user(pwdb, username, password)
+        add_user(pwdb, username, password) #make sure to add the hash into these arguments
         return True
 
 def main():
