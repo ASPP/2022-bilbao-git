@@ -1,4 +1,5 @@
 import json
+from random import randint
 
 def get_credentials():
     username = input('Enter your username: ')
@@ -19,7 +20,8 @@ def pwhash(password):
     pwh = 0
     for i, char in enumerate(password):
         pwh += (i + 1) * ord(char)
-    return pwh
+    pws = randint(1,100)+pwh
+    return pws
 
 def add_user(pwdb, username, password):
     if username not in pwdb:
